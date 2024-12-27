@@ -28,7 +28,7 @@ export default function (path?: string, options?: { width?: number; height?: num
     return { action: 'deny' }
   })
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
-    createdWindow.loadURL(`${process.env['ELECTRON_RENDERER_URL']}#/${_path}`)
+    createdWindow.loadURL(`${process.env['ELECTRON_RENDERER_URL']}#${_path}`)
   } else {
     const basePath = join(__dirname, '../renderer/index.html')
     createdWindow.loadFile(basePath).then(() => {
